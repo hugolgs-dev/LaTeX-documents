@@ -1,0 +1,516 @@
+%%%%%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% PARAMETRES DU DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+%%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{shorttoc}
+\setlength{\parindent}{0pt}
+\usepackage[top=2cm,bottom=2cm,right=2cm,left=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{nccrules}
+\usepackage{eurosym}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\addbibresource{biblio.bib}
+\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%% PARAMETRAGES PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup{labelformat=empty}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+	citecolor=black
+	}
+
+
+
+\lstdefinelanguage{SQL}{
+    keywords={SELECT, FROM, WHERE, INSERT, INTO, VALUES, DELETE, UPDATE, SET, CREATE, TABLE, DROP, ALTER, ADD, PRIMARY, KEY, FOREIGN, NOT, NULL, AUTO_INCREMENT, DEFAULT, INDEX, UNIQUE, CONSTRAINT, REFERENCES, JOIN, INNER, LEFT, RIGHT, FULL, ON, GROUP, BY, HAVING, ORDER, ASC, DESC, LIMIT, OFFSET, UNION, ALL, DISTINCT, COUNT, SUM, AVG, MIN, MAX, AS, AND, OR, IN, IS, LIKE, BETWEEN, CASE, WHEN, THEN, ELSE, END, EXISTS},
+    sensitive=false, % SQL is generally case-insensitive
+    morecomment=[l]--, % Line comment in SQL
+    morecomment=[s]{/*}{*/}, % Block comment in SQL
+    morestring=[b]', % Strings with single quotes
+    morestring=[b]" % Strings with double quotes
+}
+
+
+\lstset{
+    language=SQL, % Set the language to SQL
+    basicstyle=\ttfamily\small, % Base font style
+    keywordstyle=\color{blue}\bfseries, % Style for SQL keywords
+    commentstyle=\color{gray}, % Style for comments
+    stringstyle=\color{purple}, % Style for strings
+    showstringspaces=false, % Do not show spaces in strings
+    numbers=none,
+    numberstyle=\tiny\color{gray}, % Style for line numbers
+    breaklines=true, % Break long lines automatically
+    frame=single, % Add a frame around the code
+    captionpos=b, % Position captions at the bottom
+    backgroundcolor=\color{black!5}, % Light gray background
+    tabsize=4, % Set tab size to 4 spaces
+    escapeinside={(*@}{@*)}, % For inline LaTeX within the code
+    upquote=true,
+    columns=flexible,
+    inputencoding=utf8,     % Support UTF-8  
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\fboxrule}{.2pt}
+
+%%%%% PAGE DE TITRE %%%%
+\title{Groupe F - Requêtes SQL}
+
+\author{Hudayfa Koujdal - Hugo Ligneres - Soukaina Mourabit - Samantha Ortega}
+
+\date{UE L315 - Semaine 2}
+
+\begin{document}
+
+\maketitle
+
+\hrulefill
+\vspace{6cm}
+\begin{center}
+	\includegraphics[scale=.4]{../images/univ.png}
+		\\
+		\vspace{2cm}
+	\includegraphics[scale=.25]{../images/cvtic.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Insérer des données}
+
+
+	\subsection{Ajouter 5 nouveaux clients dans la table Clients. }
+	
+\begin{lstlisting}[language=SQL]
+INSERT INTO clients (nom, prenom, telephone, mail, adresse, date_naissance, password)  
+
+VALUES  
+
+    ('Dupont', 'Jean', '0612345678', 'jean.dupont@example.com', 1, '1985-05-15', 'motdepasse1'), 
+
+    ('Martin', 'Sophie', '0623456789', 'sophie.martin@example.com', 2, '1990-08-22', 'motdepasse2'), 
+
+    ('Leroy', 'Pierre', '0634567890', 'pierre.leroy@example.com', 3, '1978-03-10', 'motdepasse3'), 
+
+    ('Moreau', 'Alice', '0645678901', 'alice.moreau@example.com', 4, '1995-11-30', 'motdepasse4'), 
+
+    ('Bernard', 'Luc', '0656789012', 'luc.bernard@example.com', 5, '1982-07-25', 'motdepasse5'); 
+\end{lstlisting} 
+
+\vspace{.5cm}
+
+Cette requête SQL insère cinq nouvelles lignes dans la table clients en spécifiant les colonnes \texttt{nom}, \texttt{prenom}, \texttt{telephone}, \texttt{mail}, \texttt{adresse}, \texttt{date\_naissance}, et \texttt{password}. Chaque ligne contient des informations personnelles pour un client, telles que le nom, le numéro de téléphone, l'adresse e-mail, une adresse (référencée par un ID), la date de naissance, et un mot de passe. Cette opération ajoute donc ces clients à la base de données. 
+	
+	\subsection{Créer 3 nouveaux comptes pour chaque client ajouté}
+	
+\begin{lstlisting}[language=SQL]
+INSERT INTO compte (id_client, numero_compte, type_compte, IBAN, solde, decouvert_autorise, montant_decouvert) 
+VALUES 
+(1, 'FR7612345678901234567890111', 'Courant', 'FR7612345678901234567890111', 1500.000, 1, 500.00), 
+(1, 'FR7612345678901234567890222', 'Epargne', 'FR7612345678901234567890222', 5000.000, 1, 1000.00), 
+(1, 'FR7612345678901234567890333', 'Joint', 'FR7612345678901234567890333', 10000.000, 1, 2000.00),
+ 
+(2, 'FR7623456789012345678901444', 'Courant', 'FR7623456789012345678901444', 2000.000, 1, 600.00), 
+(2, 'FR7623456789012345678902555', 'Epargne', 'FR7623456789012345678902555', 6000.000, 1, 1200.00), 
+(2, 'FR7623456789012345678903666', 'Joint', 'FR7623456789012345678903666', 12000.000, 1, 2500.00),
+ 
+(3, 'FR7634567890123456789014777', 'Courant', 'FR7634567890123456789014777', 2500.000, 1, 700.00), 
+(3, 'FR7634567890123456789015888', 'Epargne', 'FR7634567890123456789015888', 7000.000, 1, 1500.00), 
+(3, 'FR7634567890123456789016999', 'Joint', 'FR7634567890123456789016999', 15000.000, 1, 3000.00),
+ 
+(4, 'FR7645678901234567890127111', 'Courant', 'FR7645678901234567890127111', 3000.000, 1, 800.00), 
+(4, 'FR7645678901234567890128222', 'Epargne', 'FR7645678901234567890128222', 8000.000, 1, 1700.00), 
+(4, 'FR7645678901234567890129333', 'Joint', 'FR7645678901234567890129333', 18000.000, 1, 4000.00),
+ 
+(5, 'FR7656789012345678901230444', 'Courant', 'FR7656789012345678901230444', 3500.000, 1, 1000.00), 
+(5, 'FR7656789012345678901231555', 'Epargne', 'FR7656789012345678901231555', 9000.000, 1, 2000.00), 
+(5, 'FR7656789012345678901232666', 'Joint', 'FR7656789012345678901232666', 20000.000, 1, 5000.00);  
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête SQL insère 3 nouveaux comptes pour chaque client ajouté dans la table \texttt{compte}. Chaque client a un compte de type \texttt{Courant}, un compte \texttt{Épargne}, et un compte \texttt{Joint}. Les informations insérées incluent l'id\_client, le numero\_compte, le type\_compte, l'IBAN, le solde, le decouvert\_autorise (toujours à 0), et le montant\_decouvert (toujours NULL). En résumé, la requête ajoute 15 comptes au total (3 comptes × 5 clients) 
+
+	\subsection{Insérer 10 transactions pour différents comptes}
+	
+\begin{lstlisting}[language=SQL]
+INSERT INTO transactions (id_compte, type_transaction, montant, date_transaction, description, statut) VALUES (1, 'Depot', 500.00, '2023-10-01 09:15:00', 'Depot initial', 'Effectuee'), (1, 'Retrait', 200.00, '2023-10-02 14:30:00', 'Retrait au distributeur', 'Effectuee'), 
+
+(2, 'Depot', 1000.00, '2023-10-03 10:00:00', 'Depot mensuel', 'Effectuee'), (2, 'Virement', 300.00, '2023-10-04 16:45:00', 'Virement a un ami', 'Effectuee'), 
+
+(3, 'Depot', 1500.00, '2023-10-05 11:20:00', 'Depot pour investissement', 'Effectuee'), (3, 'Retrait', 700.00, '2023-10-06 12:10:00', 'Retrait pour achats', 'Effectuee'), 
+
+(4, 'Depot', 2000.00, '2023-10-07 08:50:00', 'Depot salaire', 'Effectuee'), (4, 'Virement', 400.00, '2023-10-08 17:30:00', 'Virement pour facture', 'Effectuee'), 
+
+(5, 'Depot', 2500.00, '2023-10-09 13:00:00', 'Depot bonus', 'Effectuee'), (5, 'Retrait', 1000.00, '2023-10-10 18:00:00', 'Retrait pour vacances', 'Effectuee'); 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête effectue dix insertions dans la table \texttt{transactions} pour enregistrer différents types d'opérations financières sur plusieurs comptes.
+
+\newpage
+
+\section{Lire des données}
+
+	\subsection{Sélectionner les clients ayant un solde supérieur à 10 000 €}
+	
+\begin{lstlisting}[language=SQL]
+SELECT clients.id_client, compte.numero_compte, clients.nom, clients.prenom, compte.solde 
+
+FROM compte  
+
+JOIN clients ON compte.id_client = clients.id_client 
+
+ WHERE solde>10000; 
+\end{lstlisting}	
+
+\vspace{.5cm}
+
+Cette requête sélectionne les clients ayant un solde supérieur à 10 000 €, en joignant les tables compte et clients sur l'ID du client. 
+
+	\subsection{Afficher toutes les transactions effectuées le mois dernie}
+	
+\begin{lstlisting}[language=SQL]
+SELECT *  
+
+FROM transactions  
+
+WHERE MONTH(date_transaction) = MONTH(CURRENT_DATE - INTERVAL 1 MONTH); 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête affiche toutes les transactions effectuées le mois dernier, en utilisant la fonction \texttt{MONTH()} pour comparer le mois de la transaction avec le mois précédent à partir de la date actuelle. 
+
+	\subsection{Lister tous les comptes avec un découvert autorisé}
+	
+\begin{lstlisting}[language=SQL]
+SELECT *  
+
+FROM `compte`  
+
+WHERE decouvert_autorise=1; 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête liste tous les comptes ayant un découvert autorisé, en filtrant les résultats avec la condition \texttt{decouvert\_autorise=1}. \\
+Pour que le \texttt{tinyint} de \texttt{decouvert\_autorise} soit soit comme un boolean et que ce soit que 0 (false) ou 1 (true) accepté, il faut rentrer la requête suivante : \\
+
+\begin{lstlisting}[language=SQL]
+ALTER TABLE compte ADD COLUMN decouvert_autorise TINYINT(1) DEFAULT 0, ADD CONSTRAINT chk_decouvert_autorise CHECK (decouvert_autorise IN (0, 1)); 
+\end{lstlisting}
+
+\newpage
+
+\section{Mettre à jour des données}
+
+	\subsection{Mettre à jour le numéro de téléphone d'un client spécifique}
+\begin{lstlisting}[language=SQL]
+UPDATE clients 
+
+SET telephone = '0123456789' 
+
+WHERE id_client = 1 ; 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête SQL met à jour le numéro de téléphone d'un client spécifique dans la table clients. Elle remplace la valeur du champ telephone par 0123456789 uniquement pour l'enregistrement où \texttt{id\_client} est égal à 1 (par exemple), grâce à la condition \texttt{WHERE}. Ainsi, seule la ligne correspondant à ce client est modifiée, sans affecter les autres enregistrements de la table. 
+	
+	\subsection{Augmenter le découvert autorisé pour certains comptes}
+
+\begin{lstlisting}[language=SQL]
+UPDATE compte
+
+SET montant_decouvert = montant_decouvert + 500
+
+WHERE id_compte IN (3, 4, 6);
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête SQL modifie les paramètres de découvert d'un compte spécifique dans la table compte. Elle active l'autorisation de découvert (\texttt{decouvert\_autorise = 1}) et fixe le montant maximum de découvert à 500 (\texttt{montant\_decouvert = 500}) uniquement pour le compte ayant l'identifiant \texttt{id\_compte = 3}, grâce à la condition \texttt{WHERE}. 
+
+	\subsection{Modifier le statut des transactions en attente}
+
+\begin{lstlisting}[language=SQL]
+UPDATE transactions 
+
+SET statut = 'Validee' 
+
+WHERE statut = 'En attente' ; 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête SQL met à jour toutes les transactions dans la table transaction qui ont actuellement un statut de \texttt{'En attente'}. Elle remplace la valeur du champ statut par \texttt{'Validée'} pour ces enregistrements. Toutes les transactions qui répondent à la condition \texttt{statut = 'En attente'} sont affectées, tandis que les autres restent inchangées. 
+	
+\newpage	
+	
+\section{Supprimer des données}
+
+	\subsection{Supprimer les comptes inactifs depuis plus de 2 ans}
+\begin{lstlisting}[language=SQL]
+DELETE FROM `compte` 
+	WHERE `id_compte` NOT IN ( 
+	SELECT DISTINCT `id_compte` 
+	FROM `transactions` 
+WHERE `date_transaction` >= DATE_SUB(NOW(), INTERVAL 2 YEAR) 
+); 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+D'abord, on extrait la liste des comptes ayant des transactions dans les deux dernières années avec \texttt{SELECT DISTINCT `id\_compte` FROM `transactions`}, en utilisant le filtre \texttt{WHERE `date\_transaction` >= DATE\_SUB(NOW(), INTERVAL 2 YEAR)}. Ensuite, on englobe cette sous-requête avec la requête principale \texttt{WHERE `id\_compte` NOT IN (...)}, qui identifie les comptes dont les \texttt{id\_compte} ne correspondent pas au filtre de la sous-requête.
+	
+	
+	\subsection{Effacer les transactions refusées ou annulées}
+\begin{lstlisting}[language=SQL]
+DELETE  FROM `transactions` 
+WHERE `statut` IN ('Annulee','Rejetee'); 
+\end{lstlisting}
+
+On supprime les transactions avec ces statuts grâce à la condition \\ \texttt{WHERE `statut` IN ('Annulee','Rejetee')}, qui sélectionne les transactions avec un statut spécifique.
+
+	\subsection{Retirer les clients sans transactions actives}
+\begin{lstlisting}[language=SQL]
+DELETE FROM `clients` 
+WHERE `id_client` NOT IN ( 
+    SELECT DISTINCT `id_client` 
+    FROM `compte` c 
+    JOIN `transactions` t ON c.`id_compte` = t.`id_compte` 
+); 
+\end{lstlisting}	
+
+\vspace{.5cm}
+
+Dans un premier temps, au niveau de la ligne \texttt{JOIN `transactions` t ON c.`id\_compte` = t.`id`\_compte`}  on met en place une jointure entre les tables \texttt{compte} et \texttt{transactions} grâce à la clé étrangère \texttt{id\_compte}. Ensuite, grâce à cette jointure et à \texttt{SELECT DISTINCT `id\_client` FROM `compte` c }, on extrait une liste des clients qui ont au moins une transaction associée à leur compte. Dans un second temps, on identifie les clients qui ne font pas partie de cette liste extraite, avec \texttt{WHERE `id\_client` NOT IN (...)}, puis on supprime ces clients.
+
+\newpage
+
+\section{Requêtes complexes}
+
+	\subsection{Compter le nombre total de transactions par type de compte}
+
+\begin{lstlisting}[language=SQL]
+SELECT c.type_compte, COUNT(t.id_transaction) AS nombre_transactions FROM compte c JOIN transactions t ON c.id_compte = t.id_compte GROUP BY c.type_compte; 
+\end{lstlisting}	
+
+\vspace{.5cm}
+
+Cette requête compte le nombre total de transactions pour chaque type de compte en utilisant une jointure entre les tables \texttt{compte} et \texttt{transactions}. La clause \texttt{JOIN} relie les deux tables via la clé id\_compte commune aux deux tables. La fonction d'agrégation \texttt{COUNT(t.id\_transaction)} calcule le nombre de transactions associées à chaque type de compte. La clause \texttt{GROUP BY c.type\_compte} regroupe les résultats par type de compte, permettant de compter les transactions pour chaque type distinct. 
+
+	\subsection{Calculer la moyenne des soldes de tous les comptes épargne}
+
+\begin{lstlisting}[language=SQL]
+SELECT AVG(c.solde) AS moyenne_solde_epargne FROM compte c WHERE c.type_compte = 'Compte epargne'; 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête utilise la fonction d'agrégation \texttt{AVG} pour calculer la moyenne des soldes des comptes dans la table compte. La clause \texttt{WHERE} filtre les enregistrements pour ne retenir que ceux dont le champ type\_compte est égal à "Compte épargne". Chaque ligne correspondant à cette condition est utilisée pour calculer la moyenne des valeurs de la colonne solde. Le résultat de la fonction \texttt{AVG(c.solde)} est ensuite présenté avec l'alias \texttt{moyenne\_solde\_epargne}. 
+
+	\subsection{Trouver les 5 clients les plus actifs en termes de transactions}
+	
+	
+\begin{lstlisting}[language=SQL]
+SELECT id_client, nom, prenom, COUNT(transactions.id_transaction) AS nombre_transactions  
+
+FROM clients JOIN transactions ON clients.id_client = transactions.id_compte  
+
+GROUP BY clients.id_client  
+
+ORDER BY nombre_transactions 
+
+ DESC LIMIT 5; 
+\end{lstlisting}	
+
+\vspace{.5cm}
+
+Cette requête trouve les 5 clients ayant effectué le plus de transactions. Elle fait une jointure entre les tables \texttt{clients} et \texttt{transactions} en associant l'\texttt{id\_client} de  \texttt{clients} avec l'\texttt{id\_compte} de \texttt{transactions}, puis elle compte le nombre de transactions par client. Ensuite, les résultats sont triés par ordre décroissant du nombre de transactions et limités à 5. 
+
+	\subsection{Lister les prêts dont la durée restante est inférieure à un an}
+\begin{lstlisting}[language=SQL]
+SELECT id_pret, id_client, montant, taux, date_debut, duree, statut  
+
+FROM prets  
+
+WHERE DATE_ADD(date_debut, INTERVAL duree MONTH) > CURDATE()  
+
+AND DATE_ADD(date_debut, INTERVAL duree MONTH) <= 		      DATE_ADD(CURDATE(), INTERVAL 12 MONTH); 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête liste les prêts dont la durée restante est inférieure à un an. Elle utilise la fonction      \texttt{DATE\_ADD} pour calculer la date de fin du prêt en ajoutant la durée (en mois) à la date de début (\texttt{date\_debut}). Ensuite, elle compare cette date de fin à la date actuelle (\texttt{CURDATE()}) et sélectionne les prêts dont la date de fin est supérieure à la date actuelle mais inférieure ou égale à la date actuelle plus 12 mois (c'est-à-dire dans les 12 prochains mois). Cela permet de filtrer les prêts dont il reste moins d'un an à rembourser. 
+
+	\subsection{Afficher le total des prêts accordés par conseiller}
+\begin{lstlisting}[language=SQL]
+SELECT con.nom,SUM(p.montant) AS total_pret FROM prets p 
+JOIN clients c ON p.id_client = c.id_client 
+JOIN conseillers con ON c.id_client = con.id_client 
+GROUP BY con.id_conseiller, con.nom; 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+La requête affiche le nom de chaque conseiller et le montant total des prêts accordés par chaque conseiller. Elle utilise une jointure entre les tables prêts, clients, et conseillers pour relier les informations, puis agrège les montants des prêts avec \texttt{SUM} et regroupe les résultats par ID et nom de conseiller.
+	
+\newpage
+
+\section{Requêtes avancées}
+
+	\subsection{Identifier les clients avec un total d'investissements supérieur à leur solde total}
+\begin{lstlisting}[language=SQL]
+SELECT c.id_client,  
+
+SUM(i.montant) AS total_investissements,  
+
+SUM(c.solde) AS total_solde  
+
+FROM compte c  
+
+JOIN investissements i ON c.id_client = i.id_client  
+
+GROUP BY c.id_client  
+
+HAVING total_investissements > total_solde ; 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête SQL identifie les clients dont le total des investissements dépasse leur solde total. Elle calcule la somme des montants investis et des soldes pour chaque client en reliant les tables \texttt{compte} et \texttt{investissements}. Ensuite, elle filtre les résultats pour ne conserver que les clients ayant des investissements supérieurs à leur solde. 
+
+	\subsection{Trouver les comptes ayant le plus haut taux de transactions réussie}
+\begin{lstlisting}[language=SQL]
+SELECT t.id_compte,  
+
+COUNT(CASE WHEN t.statut IN ('Validee', 'Effectuee') THEN 1 END) * 100.0 / COUNT(*) AS taux_reussite  
+
+FROM transactions t  
+
+GROUP BY t.id_compte  
+
+ORDER BY taux_reussite DESC 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête SQL calcule le taux de réussite des transactions pour chaque compte. Elle compte le nombre de transactions avec un statut \texttt{'Validée'} ou \texttt{'Effectuée'}, le divise par le total des transactions pour ce compte, puis multiplie par 100 pour obtenir un pourcentage. Les résultats sont regroupés par \texttt{id\_compte}, triés par taux de réussite décroissant (\texttt{taux\_reussite DESC}) afin de mettre en avant les comptes avec les meilleurs taux. 
+
+\newpage
+	\subsection{Lister les clients qui n'ont pas utilisé de services de prêt ou d'investissement}	
+	
+	
+\begin{lstlisting}[language=SQL]
+SELECT `id_client`, `nom`, `prenom` 
+FROM `clients` 
+WHERE `id_client` NOT IN ( 
+    SELECT `id_client` FROM `prets` 
+    UNION 
+    SELECT `id_client` FROM `investissements` 
+    ); 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+On a d'abord une sous-requête qui combine deux listes avec \texttt{UNION}, en supprimant les doublons : \\
+
+
+\begin{itemize}
+	\item Une liste qui extrait les clients ayant au moins un prêt : \\ \texttt{SELECT `id\_client` FROM `prets`} \\
+	\item Une liste qui extrait les clients ayant au moins un investissement : \\ \texttt{SELECT `id\_client` FROM `investissements`} ; \\
+\end{itemize}
+
+Ensuite, on sélectionne les clients qui n'apparaissent dans aucune des deux listes avec \texttt{WHERE `id\_client` NOT IN (...)}, puis on retourne une liste de ces clients, en affichant leurs id\_client, leurs noms et leurs prénoms.
+
+	\subsection{Déterminer le montant total des intérêts générés par les prêts}
+	
+\begin{lstlisting}[language=SQL]
+SELECT SUM(`montant` * `taux` / 100) AS `total_interets` 
+
+FROM `prets`; 
+\end{lstlisting}	
+
+\vspace{.5cm}
+
+On calcule d'abord chaque intérêt présent dans la table prêts, en utilisant la formule \texttt{`montant` * `taux` / 100}, avec \texttt{/ 100} car le taux est exprimé en pourcentages. Ensuite, on additionne les intérêts calculés, et on place cette somme dans la variable \texttt{total\_interets}. 
+Cette requête retourne un seul résultat : le montant total des intérêts générés par tous les prêts. 
+
+\newpage
+	
+	\subsection{Calculer la variation mensuelle du nombre de transactions}
+\begin{lstlisting}[language=SQL]
+SELECT 
+
+    YEAR(date_transaction) AS annee_transaction, 
+
+    MONTH(date_transaction) AS mois_transaction, 
+
+    COUNT(id_transaction) AS total_transactions, 
+
+    COUNT(id_transaction) - ( 
+
+        SELECT 
+
+COUNT(id_transaction) 
+
+        FROM 
+
+            transactions t2 
+
+        WHERE 
+
+            YEAR(t2.date_transaction) = YEAR(t1.date_transaction) 
+
+            AND MONTH(t2.date_transaction) = MONTH(t1.date_transaction) - 1 
+
+    ) AS variation_transactions 
+
+FROM 
+
+    transactions t1 
+
+GROUP BY 
+
+    YEAR(date_transaction), 
+
+    MONTH(date_transaction) 
+
+ORDER BY 
+
+    annee_transaction DESC, 
+
+    mois_transaction DESC; 
+\end{lstlisting}
+
+\vspace{.5cm}
+
+Cette requête SQL permet de calculer la variation mensuelle du nombre de transactions en comparant le nombre de transactions pour chaque mois avec celui du mois précédent. Elle commence par sélectionner l'année et le mois de chaque transaction, puis elle compte le nombre total de transactions par mois. Ensuite, une sous-requête est utilisée pour récupérer le nombre de transactions du mois précédent et calculer la différence, donnant ainsi la variation mensuelle. Les résultats sont groupés par année et mois, et triés par ordre décroissant de l'année et du mois, ce qui permet de voir l'évolution des transactions mois par mois. 
+
+\end{document}

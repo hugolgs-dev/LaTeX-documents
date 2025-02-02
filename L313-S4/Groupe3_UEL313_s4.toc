@@ -1,0 +1,13 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Organisation générale}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Répartition du travail}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Méthode d'organisation}{4}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Fonctionnalités et défis techniques}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Installation de Symfony}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Dépôt GitHub du projet}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Création du CRUD}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Problèmes migrations}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Ajout de Bootstrap 5.3 au projet}{7}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Utilisation de Bootstrap}{8}{subsubsection.3.5.1}%
+\contentsline {section}{\numberline {4}Conclusion}{9}{section.4}%

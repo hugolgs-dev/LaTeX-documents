@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'LIGNERES_Hugo_UEL313.blg'
+[41] biber:340> INFO - === mer. janv.  8, 2025, 18:07:12
+[49] Biber.pm:419> INFO - Reading 'LIGNERES_Hugo_UEL313.bcf'
+[83] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[90] bbl.pm:660> INFO - Writing 'LIGNERES_Hugo_UEL313.bbl' with encoding 'UTF-8'
+[90] bbl.pm:763> INFO - Output to LIGNERES_Hugo_UEL313.bbl
+[90] Biber.pm:131> WARN - The file 'LIGNERES_Hugo_UEL313.bcf' does not contain any citations!
+[90] Biber.pm:133> INFO - WARNINGS: 1

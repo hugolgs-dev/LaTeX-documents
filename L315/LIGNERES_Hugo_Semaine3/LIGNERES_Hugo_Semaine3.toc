@@ -1,0 +1,29 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Exercice 1}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}La liste des noms officiels des pays stockés de la 10ème à la 22ème position (en affichant seulement le champ "name.official")}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Les noms officiels de la 10ème à la 22ème position de la liste triée par superficie croissante (utiliser le champ"area")}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Toutes les infos à propos de votre pays préféré (par exemple le Canada)}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Les noms officiels des pays dont l'une des langues est le néerlandais (à vous de trouver le champ à tester)}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Les noms officiels des pays commençant par l'initiale de votre nom (par exemple la lettre C)}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Les noms officiels des pays dont la superficie est comprise entre 400000 et 500000 km²}{5}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Exercice 2}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Tous les titres}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Les titres des documents ayant les rangs 1 à 10}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Les auteurs de tous les documents dont le titre commence par la lettre N}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Toutes les informations vers les documents n'ayant pas de champ "type\_de\_document"}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Les différents types de documents qui apparaissent dans cette base}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Les titres des 5 documents avec le plus grand nombre de réservations}{8}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Les documents avec un nombre de réservations supérieur à 200}{9}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Le nombre total de réservations pour chaque type de document}{9}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Les auteurs qui ont le plus grand nombre de documents dans la base}{10}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Exercice 3}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Insérer dans votre collection un nouvel enregistrement}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Insérer ensuite une autre publication de type "article"}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Afficher le nombre de publications de type « Book »}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Afficher toutes les publications dont vous êtes l'auteur}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Afficher les titres de toutes les publications depuis 2012 inclus}{13}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Afficher le nombre de publications de type « Article » depuis 2012}{13}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Afficher les années des publications de l'auteur « Wolfgang Wahlster »}{14}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Afficher la liste de tous les éditeurs (champ « publisher ») distincts}{14}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Afficher la liste des publications de « Wolfgang Wahlster » triée par année croissante}{15}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Supprimer le champ « type » de toutes les publications}{15}{subsection.3.10}%

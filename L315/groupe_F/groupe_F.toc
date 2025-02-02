@@ -1,0 +1,10 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Organisation générale}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Répartition du travail}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Méthode d'organisation}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Dépôt GitHub du projet}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Fonctionnalités implémentées}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Affichage et emprunt des documents}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Interface administration}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Témoignages des membres du groupe}{9}{section.4}%

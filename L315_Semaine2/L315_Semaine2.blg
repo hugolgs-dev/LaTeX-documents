@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'L315_Semaine2.blg'
+[43] biber:340> INFO - === ven. janv. 17, 2025, 19:19:59
+[53] Biber.pm:419> INFO - Reading 'L315_Semaine2.bcf'
+[87] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[94] bbl.pm:660> INFO - Writing 'L315_Semaine2.bbl' with encoding 'UTF-8'
+[94] bbl.pm:763> INFO - Output to L315_Semaine2.bbl
+[94] Biber.pm:131> WARN - The file 'L315_Semaine2.bcf' does not contain any citations!
+[94] Biber.pm:133> INFO - WARNINGS: 1

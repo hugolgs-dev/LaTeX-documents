@@ -1,0 +1,21 @@
+Intro
+
+Organisation générale
+    Répartition théorique du travail
+
+Explications techniques
+    Mise en place du projet
+        Installation de Symfony
+        Mise en place du dépôt GitHub
+    Mise en place du CRUD (si Hugo se bouge, sinon...)
+    Problèmes migrations
+    Ajout de Bootstrap au projet
+        Utilisation de Bootstrap
+
+Arborescence du site (si j'ai le temps)
+
+Conclusion
+
+Bibliographie/Ressources utilisées
+
+Par contre j'ai pas de captures d'écrans pour l'installation de Symfony et pour les pb des migrations. Pour le premier je peux le refaire pour l'exemple, mais pour le deuxième ...
