@@ -1,0 +1,209 @@
+%%%%%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% PARAMETRES DU DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+%%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{shorttoc}
+\setlength{\parindent}{0pt}
+\usepackage[top=2cm,bottom=2cm,right=2cm,left=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{nccrules}
+\usepackage{eurosym}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\addbibresource{biblio.bib}
+\usepackage{listings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%% PARAMETRAGES PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup{labelformat=empty}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+	citecolor=black
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\fboxrule}{.2pt}
+
+%%%%% PAGE DE TITRE %%%%
+\title{UE L315 - EF - Partie 2}
+
+\author{Hugo Lignères}
+
+\date{06/02/2025}
+
+\begin{document}
+
+\maketitle
+
+\hrulefill
+\vspace{6cm}
+\begin{center}
+	\includegraphics[scale=.4]{../images/univ.png}
+		\\
+		\vspace{2cm}
+	\includegraphics[scale=.25]{../images/cvtic.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section*{Exercice 1}
+
+	\subsection*{Question 1}
+	
+L'équivalent de cette table serait, au format Mongo, la collection suivante:	
+	
+\begin{lstlisting}
+[ 
+ {
+   "utilisateur_id": ObjectId(1),
+   "nom": "Ligneres",
+   "prenom": "Hugo",
+   "email": "hugo.ligneres@orange.fr"
+ }
+]
+\end{lstlisting}
+	
+	J'ai repris le même nom des champs dans la base au format SQL. Par contre, au format Mongo, pas besoin de préciser au préalable le type de données de chaque champs ainsi que la longueur maximale. Donc je n'ai pas indiqué \texttt{INT} \texttt{VARCHAR(255)} ou encore \texttt{NOT NULL}. Par contre, j'ai ajouté \texttt{ObjectId} pour préciser qu'il s'agissait de l'ID de la collection.
+	
+	\subsection*{Question 2}
+	
+	Au format Mongo, l'équivalent de cette requête serait : \\ \texttt{db.utilisateurs.find(\{"prenom"\},\{"nom": "John"\})}
+	
+	\subsection*{Question 3}
+	
+	Au format Mongo, l'équivalent de cette requête serait : \\
+	
+	\texttt{db.utilisateurs.countDocuments()}
+	
+\section*{Exercice 2}
+
+	\subsection*{Question 1}
+
+Collection 1 : utilisateurs \\
+
+\begin{lstlisting}
+[ 
+ {
+   "utilisateur_id": ObjectId(1),
+   "nom": "Ligneres",
+   "prenom": "Hugo",
+   "email": "hugo.ligneres@orange.fr"
+ }
+]
+\end{lstlisting}
+
+Collection 2 : commandes \\
+
+\begin{lstlisting}
+[ 
+ {
+   "commande_id": ObjectId(1),
+   "utilisateur_id": 1,
+   "date_commande": "2025-05-15",
+   "montant": 10
+ }
+]
+\end{lstlisting}
+
+Collection 3 : lignes\_commandes \\
+
+\begin{lstlisting}
+[
+ { 
+   "ligne_commande_id": ObjectId(1),
+   "commande_id": 1,
+   "produit_id: 1,
+   "quantite": 10,
+   "prix_unitaire": 20
+ }
+]
+\end{lstlisting}
+
+Collection 4 : produits \\
+
+\begin{lstlisting}
+]
+ {
+   "produit_id": ObjectId(1),
+   "nom": "Pantalon",
+   "prix": "10",
+ }
+}
+\end{lstlisting}
+
+	\subsection*{Question 2}
+
+Collection
+
+\begin{lstlisting}
+[
+ {
+   "utilisateur_id": 1,
+   "nom": "Ligneres",
+   "prenom": "Hugo",
+   "email": "hugo.ligneres@orange.fr"
+ }
+ {
+   "produit_id: 1,
+   "quantite": 10,
+   "prix_unitaire": 20
+ }
+ {
+   "commande_id": 1,
+   "date_commande": "2025-05-15",
+   "montant": 10
+ }
+]
+\end{lstlisting}
+\newpage
+
+J'ai voulu rangé ces données dans 3 sous-collections : \\
+
+\begin{itemize}
+	\item Une pour les informations sur la personne: son id, son nom, son prénom et son email ;
+	\item Une pour les informations sur le produit: son id, la quantité disponible et son prix unitaire ;
+	\item Enfin, une pour les informations sur la commande : son id, la date et le montant de la commande.
+\end{itemize}
+
+
+	\subsection*{Question 3}
+	
+	En utilisant la collection de la question 2 :
+	
+\begin{lstlisting}
+db.collection.find({"produit_id"},{"utilisateur_id": 1})
+\end{lstlisting}
+
+\section*{Exercice 3}
+
+\subsection*{Proposition 1}
+
+La structure proposée me paraît plus cohérente que de tout mettre dans une seule collection. Les informations sont clairement séparées en fonction de l'information qu'elles apportent (informations sur le livre dans la collection books, informations sur l'auteur dans la collection author), et le lien entre les 2 collections est gérée par le champs \texttt{author} dans la collection books, relié au champs \texttt{\_id} de la collection authors.
+
+\subsection*{Proposition 2}
+
+La même chose que pour la proposition 1. De plus, avec le champs \texttt{biography} de la collection authors qui s'est ajouté, il serait encore moins pertinent de mélanger les 2 collections ensemble.
+
+\subsection*{Proposition 3}
+
+Pour cette proposition, je pense qu'il serait préférable de tout ranger dans une seule collection. En effet, il y a de fortes chances que les id des livres dans le champs \texttt{books} de la table authors soient mal renseignés, ce qui peut poser des problèmes. À mon avis, il serait préférable de tout mettre dans la même collection, comme ça le champs  \texttt{books} sera renseigné de titres de livres et non d'id, réduisant les erreurs possibles.
+
+\end{document}

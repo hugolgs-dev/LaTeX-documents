@@ -1,0 +1,7 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Partie 1 : CSRF}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}CSRF - 0 protection}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}CSRF - contournement de jeton}{5}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Partie 2 : XSS}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Challenge root-me}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Les recommandations ANSSI contre les vulnerabilités XSS}{5}{subsection.2.2}%

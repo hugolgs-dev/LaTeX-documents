@@ -1,0 +1,21 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}DNS}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Le protocole DNS en détail}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Les détournements DNS}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}DNS Hijacking}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Man-in-the-Middle}{3}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Empoisonnement du cache DNS (DNS Spoofing)}{3}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}DNS Tunneling}{4}{subsubsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.5}Déni de service (DDOS)}{4}{subsubsection.1.2.5}%
+\contentsline {subsubsection}{\numberline {1.2.6}Interception des paquets}{4}{subsubsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.3}Solutions aux différents types d'attaques}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Exemple réel de détournement DNS}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}OpenSSL \& Certification}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Génération du certificat auto-signé}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Détails du certificat}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Comparaison entre deux certificats}{8}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Recommandations ANSSI sur l'utilisation du protocole HTTPS}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Explication de certaines notions}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}L'HTTP Strict Transport Security}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Certificate Transparency Logs}{9}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Ressources utilisées}{10}{section.4}%

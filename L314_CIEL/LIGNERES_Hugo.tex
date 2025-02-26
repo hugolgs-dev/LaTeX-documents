@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%% PREAMBULE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% PARAMETRES DU DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+%%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{shorttoc}
+\setlength{\parindent}{0pt}
+\usepackage[top=2cm,bottom=2cm,right=2cm,left=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{nccrules}
+\usepackage{eurosym}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\addbibresource{biblio.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%% PARAMETRAGES PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup{labelformat=empty}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+	citecolor=black
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\fboxrule}{.2pt}
+
+%%%%% PAGE DE TITRE %%%%
+\title{UE L314 - EF}
+
+\author{Hugo Ligneres}
+
+\date{04/02/2025}
+
+\begin{document}
+
+\maketitle
+
+\hrulefill
+\vspace{6cm}
+\begin{center}
+	\includegraphics[scale=.4]{../images/univ.png}
+		\\
+		\vspace{2cm}
+	\includegraphics[scale=.25]{../images/cvtic.png}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section*{Partie 1}
+
+	\subsection*{Question 1}
+
+Par rapport à NodeJS, NestJs propose les avantages suivants : \\
+
+\begin{itemize}
+	\item NestJS est basé sur TypeScript, qui est plus sûr que JavaScript, notamment pour les projets de grandes ampleurs.
+	\item L'injection des dépendances est supportée par NestJS ;
+	\item NestJS propose plusieurs commandes qui facilitent et accélère le développemen, comme la commande \texttt{nest generate} ;
+	\item NestJS intègre facilement différents ORM pour faciliter les interactions entre le backend d'une application et sa base de données ;
+\end{itemize}	
+	
+	\subsection*{Question 2}
+
+Dans un premier temps, il faut donner un nom à ce component, avec le code : \\ \texttt{@Component({{selector: 'nom-component'})}}. Ensuite, pour l'intégrer à une page HTML, il suffit simplement d'inclure une balise qui a le même nom que le component, par exemple \texttt{<nom-component></nom-component>}
+	
+	\subsection*{Question 3}
+	
+Les tests unitaires sont \textbf{fortement recommandés, afin d’éviter de se rendre compte de problèmes uniquement une fois l’application déployée.}
+	
+	\subsection*{Question 4}
+
+Angular doit générer un dossier \texttt{/dist} qui contiendra les fichiers statiques que le navigateur lira. En effet, le navigateur ne peut pas lire du TypeScript. Comme Angular est utilisé avec TypeScript, il faut donc passer par cette étape pour que le projet Angular soit lu par un navigateur.
+
+\section*{Partie 2}
+
+Je n'ai pas réussi à afficher les données, donc je n'ai pas pu aller plus loin.
+
+\printbibliography
+
+\end{document}
